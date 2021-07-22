@@ -20,4 +20,5 @@ RUN wget "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v${SQLCIPHER_
   && npm install sqlite3 -g --build-from-source --sqlite_libname=sqlcipher --sqlite=/usr/local --verbose \
   && cd .. \
   && rm -rf ./sqlcipher-src \
+  && rm sqlcipher.zip \
   && apk del build-dependencies
