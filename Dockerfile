@@ -17,7 +17,7 @@ RUN wget "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v${SQLCIPHER_
   && ./configure --enable-tempstore=yes CFLAGS="-DSQLITE_HAS_CODEC" LDFLAGS="-lcrypto" \
   && make; make install \
   && npm -g config set user $USER \
-  && npm install sqlite3 -g --build-from-source --sqlite_libname=sqlcipher --sqlite=/usr/local --registry=https://registry.npm.taobao.org --verbose \
+  && npm install sqlite3 -g --build-from-source --sqlite_libname=sqlcipher --sqlite=/usr/local --verbose \
   && cd .. \
   && rm -rf ./sqlcipher-src \
   && apk del build-dependencies
